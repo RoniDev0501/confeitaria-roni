@@ -1,0 +1,369 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #FCF9F5;
+        font-family: 'Poppins', sans-serif;
+        color: #2B170C;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        font-family: 'Pacifico', cursive;
+    }
+
+    .frase-cortar {
+          
+        display: none; 
+    }
+
+    .frase-destaque {
+         font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    color: #2B170C;
+    margin-top: 20px;
+    margin-bottom: 20px; /* ← espaço abaixo */
+
+    }
+
+    p{
+        font-family: 'Poppins'
+
+    }
+
+    h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    color: #2B170C;
+    margin-top: -15px;
+    margin-bottom: 50px; /* ← espaço abaixo */
+    }
+
+    .titulo-bolo{
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    color: #2B170C;
+    margin-top: 30px;
+    margin-bottom: 32px; /* ← espaço abaixo */
+    }
+
+
+    /* ========================
+    HEADER
+    ======================== */
+    header {
+        background-color: #2B170C; /* marrom escuro */
+        padding: 15px 20px;
+        position: relative;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* logo na esquerda, botão na direita */
+        align-items: center;
+        
+    }
+
+    .logo {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        font-family: 'Pacifico', cursive;
+    }
+
+    /* ========================
+    BOTÃO HAMBURGUER — MOBILE
+    ======================== */
+    .hamburguer {
+        display: flex;          /* visível no mobile */
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        margin-left: auto;
+    }
+
+    .hamburguer span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: white;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    /* ========================
+    MENU — MOBILE (fechado por padrão)
+    ======================== */
+    .menu {
+        display: none;
+        position: absolute;
+        top: 58px;
+        right: 0;          /* ← TROCA left: 0 por right: 0 */
+        width: 200px;      /* ← TROCA width: 100% por um tamanho fixo */
+        z-index: 100;
+        border-radius: 0 0 0 8px; /* Arredonda levemente o canto inferior esquerdo para suavizar */
+        overflow: hidden;
+    }
+
+    .menu.aberto {
+        display: block;
+        /* Mistura do marrom com transparência (rgba) e efeito de vidro fosco (blur) */
+        background-color: rgba(43, 23, 12, 0.85); 
+        backdrop-filter: blur(8px); 
+        -webkit-backdrop-filter: blur(8px); /* Suporte para navegadores Safari */
+        box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+    }
+    .menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column; /* itens empilhados no mobile */
+    }
+
+    .menu ul li a {
+        display: block;
+        padding: 14px 20px;
+        color: #FCF9F5; /* Texto cor creme para melhor harmonia */
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid rgba(252, 249, 245, 0.08); /* Linha divisória sutil entre os links */
+    }
+
+
+
+    .menu ul li a:hover {
+        background-color: rgba(252, 249, 245, 0.15); /* Destaque sutil ao passar o mouse */
+        color: #E8A598; /* Tom rosa queimado/morango sutil para o link ativo/hover */
+        padding-left: 25px; /* Leve recuo para a direita criando um efeito dinâmico elegante */
+    }
+    /* ========================
+    ANIMAÇÃO DO X ao abrir
+    ======================== */
+    .hamburguer.ativo span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburguer.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguer.ativo span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* ========================
+    MEDIA QUERY — PC / NOTEBOOK
+    min-width: 1024px
+    ======================== */
+
+    .parallax {
+        background-image: url('img/768px.png'); /* ← coloque o nome da sua imagem */
+        background-attachment: fixed;            /* ← ESTE é o efeito parallax */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;                           /* altura da seção */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parallax-conteudo {
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* sombra para legibilidade */
+    }
+
+    .parallax-conteudo h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .parallax-conteudo p {
+        font-size: 1.2rem;
+    }
+
+
+    .parallax2 {
+        background-image: url('img/morning\,coffe.png'); /* ← coloque o nome da sua imagem */
+        background-attachment: fixed;            /* ← ESTE é o efeito parallax */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;                           /* altura da seção */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parallax2-conteudo {
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* sombra para legibilidade */
+    }
+
+    .parallax2-conteudo h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .parallax2-conteudo p {
+        font-size: 1.2rem;
+    }
+
+    .quebra-desk {
+        display: none;
+    }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(43, 23, 12, 0.85); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2);
+    padding-top: 20px;    /* ← desencosta do topo */
+    padding-bottom: 20px; /* ← respiro embaixo também */
+    font-size: 1.2rem;
+    color: #dbdbdb; /* ← cor creme, mesma dos links do menu */
+ 
+}
+
+.icones img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+   
+}
+
+.icones {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: center; /* ← centraliza no mobile */
+}
+
+
+    @media (min-width: 1024px) {
+
+        .quebra-desk {
+            display: block;
+        }
+
+        .frase-cortar {
+        display: inline; /* ← visível no mobile */
+    }
+
+        .hamburguer {
+            display: none;      /* esconde o botão hamburguer */
+        }
+
+        .menu {
+            display: block;     /* menu sempre visível */
+            position: static;   /* volta ao fluxo normal */
+            width: auto;
+            background: none;
+            padding: 0;
+        }
+
+        .menu ul {
+            flex-direction: row; /* itens lado a lado */
+            gap: 10px;
+        }
+
+        .menu ul li a {
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .parallax {
+            height: 500px;
+        }
+
+        .parallax-conteudo h2 {
+            font-size: 3rem;
+        }
+
+        .frase-destaque {
+            max-width: 700px;    /* largura máxima */
+            margin: 20px auto;   /* centraliza */
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h3 {
+        font-family: 'Pacifico', cursive;
+        font-size: 1.6rem;
+        }
+    }
+
+    /* ========================
+    MEDIA QUERY — TV
+    min-width: 1280px
+    ======================== */
+    @media (min-width: 1280px) {
+
+        .quebra-desk {
+            display: block;
+        }
+
+        header {
+            padding: 20px 60px;  /* mais espaçamento lateral */
+        }
+
+        .logo {
+            font-size: 1.8rem;
+        }
+
+        .frase-cortar {
+        display: inline; /* ← visível no mobile */
+    }
+
+        .menu ul {
+            gap: 20px;
+        }
+
+        .menu ul li a {
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+        .parallax {
+            height: 600px;
+        }
+
+        .parallax-conteudo h2 {
+            font-size: 3.8rem;
+        }
+
+        .frase-destaque {
+            max-width: 900px;    /* mais largo na TV */
+            font-size: 1.3rem;
+            margin: 30px auto;
+        }
+
+        h3 {
+        font-family: 'Pacifico', cursive;
+        font-size: 1.5rem;
+        }
+    }
+
