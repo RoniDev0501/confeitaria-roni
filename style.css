@@ -42,7 +42,7 @@
 
     h3 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #2B170C;
     margin-top: -15px;
     margin-bottom: 50px; /* ← espaço abaixo */
@@ -172,7 +172,7 @@
     ======================== */
 
     .parallax {
-        background-image: url('img/768px.png'); /* ← coloque o nome da sua imagem */
+        background-image: url('img/768px\ \(1\).png'); /* ← coloque o nome da sua imagem */
         background-attachment: fixed;            /* ← ESTE é o efeito parallax */
         background-position: center;
         background-repeat: no-repeat;
