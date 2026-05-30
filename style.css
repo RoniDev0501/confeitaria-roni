@@ -196,7 +196,7 @@
     ======================== */
 
     .parallax {
-       background-image: url('img/768px\ \(1\).png'); /* ← coloque o nome da sua imagem */
+       background-image: url('img/1024px.png'); /* ← coloque o nome da sua imagem */
            background-attachment: fixed;            /* ← ESTE é o efeito parallax */
         background-position: center;
         background-repeat: no-repeat;
@@ -412,5 +412,4 @@
         padding: 14px 32px;
      }
     }
-
 
