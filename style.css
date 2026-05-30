@@ -27,13 +27,17 @@
     }
 
     .frase-destaque {
-         font-family: 'Pacifico', cursive;
-    font-size: 1.2rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
     color: #2B170C;
     margin-top: 20px;
     margin-bottom: 20px; /* ← espaço abaixo */
 
     }
+
+    .frase-destaque strong {
+    font-size: inherit;
+}
 
     p{
         font-family: 'Poppins'
@@ -42,7 +46,7 @@
 
     h3 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #2B170C;
     margin-top: -15px;
     margin-bottom: 50px; /* ← espaço abaixo */
@@ -50,11 +54,31 @@
 
     .titulo-bolo{
     font-family: 'Pacifico', cursive;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #2B170C;
     margin-top: 30px;
-    margin-bottom: 32px; /* ← espaço abaixo */
+    margin-bottom: 05px; /* ← espaço abaixo */
     }
+
+    .btn-pedido {
+    display: inline-block;
+    background-color: #2B170C;
+    color: #FCF9F5;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-pedido:hover {
+    background-color: #E8A598;
+    color: #2B170C;
+    transform: scale(1.05);
+}
 
 
     /* ========================
@@ -190,7 +214,7 @@
     }
 
     .parallax-conteudo h2 {
-        font-size: 2.5rem;
+        font-size: 1.2rem;
         margin-bottom: 10px;
     }
 
@@ -271,7 +295,7 @@
 
         .frase-cortar {
         display: inline; /* ← visível no mobile */
-    }
+        }
 
         .hamburguer {
             display: none;      /* esconde o botão hamburguer */
@@ -306,7 +330,7 @@
         .frase-destaque {
             max-width: 700px;    /* largura máxima */
             margin: 20px auto;   /* centraliza */
-            font-size: 1.1rem;
+            font-size: 2.5rem;
             text-align: center;
             padding: 0 20px;
         }
@@ -314,6 +338,17 @@
         h3 {
         font-family: 'Pacifico', cursive;
         font-size: 1.6rem;
+        }
+
+        .titulo-bolo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+         }
+
+       .btn-pedido {
+        margin-top: 0;
+        flex-shrink: 0;
         }
     }
 
@@ -357,7 +392,7 @@
 
         .frase-destaque {
             max-width: 900px;    /* mais largo na TV */
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             margin: 30px auto;
         }
 
@@ -365,5 +400,17 @@
         font-family: 'Pacifico', cursive;
         font-size: 1.5rem;
         }
+
+        titulo-bolo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
+
+    .btn-pedido {
+        font-size: 1.1rem;
+        padding: 14px 32px;
+     }
+    }
+
 
