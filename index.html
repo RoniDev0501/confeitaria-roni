@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
      <div class="navbar">
 
@@ -41,26 +40,27 @@
     Ingredientes Especiais para momentos especiais 💖🍓🍫"</span>
   </strong>
 </p>
-  <main>
-     <section class="parallax">
-         <div class="parallax-conteudo">
-         <h2>Bolos Confeccionados</h2>
-        <p>Confeccionados com ingredientes selecionados peça já o seu😋!!!</p>
-         </div>
-     </section>
 
-  
+<section class="parallax" id="parallax">
+  <div class="parallax-conteudo">
+    <h2>Ingredientes Selecionados</h2>
+    <p>Feitos Com Muito Capricho!!!</p>
+  </div>
+</section>
+
+  <main>
+    
      <h1>Karols Doces</h1>
 
-     <h3><strong>🎂 Bolo artesanal de chocolate com recheio cremoso de     prestígio😋 <br> <span class="frase-cortar"> cobertura super macia e cremosa,  decorado com morangos   fresquinhos!!! <br> Feito com ingredientes selecionados para proporcionar uma experiência única, irresistível e inesquecível!😍</span></strong>
+     <h3><strong>🎂👆🏽 Bolo artesanal de chocolate com recheio cremoso de     prestígio😋 <br> <span class="frase-cortar"> cobertura super macia e cremosa,  decorado com morangos   fresquinhos!!! <br> Feito com ingredientes selecionados para proporcionar uma experiência única, irresistível e inesquecível!😍</span></strong>
      </h3>
  
  
 
       <section class="parallax2">
          <div class="parallax-conteudo">
-         <h2>Para Cafézinho Manhã/Tarde</h2>
-         <p>Feitos Muito Capricho!!!</p>
+         <h2>Experiência Inesquecível</h2>
+         <p>Sabor Inigualável!!!</p>
          </div>
      </section>
 
@@ -102,15 +102,30 @@
   </footer>
   
 
-  <script>                                          <!-- ← ADICIONE ESTE BLOCO -->
-    const btn = document.getElementById('btnHamburguer');
-    const menu = document.getElementById('menu');
+<script>
+  /* hamburguer */
+  const btn = document.getElementById('btnHamburguer');
+  const menu = document.getElementById('menu');
 
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('ativo');
-      menu.classList.toggle('aberto');
-    });
-  </script>
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('ativo');
+    menu.classList.toggle('aberto');
+  });
+
+  /* parallax */
+  const parallaxEl = document.getElementById('parallax');
+  const parallax2El = document.querySelector('.parallax2');
+
+  window.addEventListener('scroll', () => {
+    const speed = 0.35;
+
+    const rect1 = parallaxEl.getBoundingClientRect();
+    parallaxEl.style.setProperty('--parallax-move', `${-rect1.top * speed}px`);
+
+    const rect2 = parallax2El.getBoundingClientRect();
+    parallax2El.style.setProperty('--parallax2-move', `${-rect2.top * speed}px`);
+  });
+</script>
 
 </body>
 </html>
