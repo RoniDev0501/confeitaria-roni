@@ -1,52 +1,54 @@
+* {
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
+body {
         background-color: #FCF9F5;
         font-family: 'Poppins', sans-serif;
         color: #2B170C;
     }
 
-    main {
+ main {
         padding: 20px;
-    }
+}
 
-    h1 {
+h1 {
         text-align: center;
         color: white;
         font-family: 'Pacifico', cursive;
-    }
+}
 
-    .frase-cortar {
+.frase-cortar {
           
         display: none; 
-    }
+}
 
-    .frase-destaque {
+.frase-destaque {
     font-family: 'Pacifico', cursive;
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     color: #2B170C;
     margin-top: 20px;
-    margin-bottom: 20px; /* ← espaço abaixo */
+    margin-bottom: 05px; /* ← espaço abaixo */
+    text-align: center;
 
-    }
+}
 
-    .frase-destaque strong {
+.frase-destaque strong {
     font-size: inherit;
 }
 
-    p{
-        font-family: 'Poppins'
+    p {
+        font-family: 'Poppins';  
+        font-size: 1.4rem;
+        
 
     }
 
     h3 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #2B170C;
     margin-top: -15px;
     margin-bottom: 50px; /* ← espaço abaixo */
@@ -80,16 +82,19 @@
     transform: scale(1.05);
 }
 
+/* MOBILE FIRST */
+.pedido-linha {
+    display: block;
+    text-align: right;
+    font-size: 1.5rem;
+}
 
-    /* ========================
-    HEADER
-    ======================== */
-    header {
-        background-color: #2B170C; /* marrom escuro */
-        padding: 15px 20px;
-        position: relative;
-        font-family: 'Poppins', sans-serif;
-    }
+header {
+    background-color: #2B170C; /* marrom escuro */
+    padding: 15px 20px;
+    position: relative;
+ font-family: 'Poppins', sans-serif;
+}
 
     .navbar {
         display: flex;
@@ -100,7 +105,7 @@
 
     .logo {
         color: white;
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         font-weight: bold;
         font-family: 'Pacifico', cursive;
     }
@@ -156,17 +161,17 @@
         flex-direction: column; /* itens empilhados no mobile */
     }
 
-    .menu ul li a {
-        display: block;
-        padding: 14px 20px;
-        color: #FCF9F5; /* Texto cor creme para melhor harmonia */
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        transition: all 0.2s ease;
-        border-bottom: 1px solid rgba(252, 249, 245, 0.08); /* Linha divisória sutil entre os links */
-    }
+.menu ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: #FCF9F5; /* Texto cor creme para melhor harmonia */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(252, 249, 245, 0.08); /* Linha divisória sutil entre os links */
+}
 
 
 
@@ -196,7 +201,7 @@
     ======================== */
 
     .parallax {
-       background-image: url('img/1024px.png'); /* ← coloque o nome da sua imagem */
+       background-image: url('img/768px.png'); /* ← coloque o nome da sua imagem */
            background-attachment: fixed;            /* ← ESTE é o efeito parallax */
         background-position: center;
         background-repeat: no-repeat;
@@ -214,26 +219,25 @@
     }
 
     .parallax-conteudo h2 {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         margin-bottom: 10px;
     }
 
     .parallax-conteudo p {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
-
-    .parallax2 {
-        background-image: url('img/morning\,coffe.png'); /* ← coloque o nome da sua imagem */
-        background-attachment: fixed;            /* ← ESTE é o efeito parallax */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 400px;                           /* altura da seção */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.parallax2 {
+ background-image: url('img/morning\,coffe.png'); /* ← coloque o nome da sua imagem */
+ background-attachment: fixed;            /* ← ESTE é o efeito parallax */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 400px;                           /* altura da seção */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
 
     .parallax2-conteudo {
         text-align: center;
@@ -247,14 +251,14 @@
     }
 
     .parallax2-conteudo p {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     .quebra-desk {
         display: none;
-    }
+}
 
-  .footer-container {
+.footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -263,8 +267,8 @@
     backdrop-filter: blur(8px); 
     -webkit-backdrop-filter: blur(8px);
     box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2);
-    padding-top: 20px;    /* ← desencosta do topo */
-    padding-bottom: 20px; /* ← respiro embaixo também */
+    padding-top: 12px;    /* ← desencosta do topo */
+    padding-bottom: 12px; /* ← respiro embaixo também */
     font-size: 1.2rem;
     color: #dbdbdb; /* ← cor creme, mesma dos links do menu */
  
@@ -276,7 +280,21 @@
     border-radius: 50%;
     object-fit: cover;
     display: block;
-   
+    transition: box-shadow 0.3s ease;
+}
+
+.icones img:hover {
+    box-shadow: 0 0 12px rgba(232, 165, 152, 0.8); /* ← brilho rosê ao redor */
+}
+
+.icones a {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+}
+
+.icones a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 .icones {
@@ -286,8 +304,16 @@
     justify-content: center; /* ← centraliza no mobile */
 }
 
+.parallax, .parallax2 {
+    margin-left: -20px;
+    margin-right: -20px;
+}
 
-    @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+
+    .parallax {
+        background-image: url('img/1024px.png'); /* ← imagem para 1280px+ */
+    }
 
         .quebra-desk {
             display: block;
@@ -331,7 +357,7 @@
             max-width: 700px;    /* largura máxima */
             margin: 20px auto;   /* centraliza */
             font-size: 2.5rem;
-            text-align: center;
+            text-align: left;
             padding: 0 20px;
         }
 
@@ -358,8 +384,13 @@
     ======================== */
     @media (min-width: 1280px) {
 
+         .parallax {
+        background-image: url('img/1024px.png'); /* ← imagem para 1280px+ */
+    }
+
         .quebra-desk {
             display: block;
+            text-align: left;
         }
 
         header {
@@ -394,6 +425,7 @@
             max-width: 900px;    /* mais largo na TV */
             font-size: 1.8rem;
             margin: 30px auto;
+            text-align: center;
         }
 
         h3 {
