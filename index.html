@@ -1,447 +1,116 @@
-* {
-     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KarolsDoces</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="[https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap)" rel="stylesheet">
+    <link href="[https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap](https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-        background-color: #FCF9F5;
-        font-family: 'Poppins', sans-serif;
-        color: #2B170C;
-    }
+  <header>
+     <div class="navbar">
 
- main {
-        padding: 20px;
-}
+         <!-- Logo -->
+         <div class="logo">🍓 Karol's Cakes & Sweets</div>
 
-h1 {
-        text-align: center;
-        color: white;
-        font-family: 'Pacifico', cursive;
-}
+         <!-- Botão hamburguer (visível só no mobile) -->
+         <button class="hamburguer" id="btnHamburguer">
+         <span></span>
+         <span></span>
+         <span></span>
+         </button>
 
-.frase-cortar {
-          
-        display: none; 
-}
+         <!-- Menu de navegação -->
+          <nav class="menu" id="menu">
+             <ul>
+                 <li><a href="https://github.com/ronidev0501" target="_blank">Início</a></li>
+                 <li><a href="https://www.instagram.com/ronii_silva_ii?igsh=MTY4YmVncDlnZzB0eA==" target="_blank">Cardápio</a></li>
+                 <li><a href="https://www.linkedin.com/in/jrads" target="_blank">Sobre</a></li>
+                 <li><a href="https://wa.me/5512996579815?text=Ol%C3%A1%2C%20analista%20de%20sitemas%20jr%2F%20front%20end%20jr%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20portf%C3%B3lio.."  target="_blank">Contato</a></li>
+              </ul>
+         </nav>
+     </div>
+  </header>
 
-.frase-destaque {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.0rem;
-    color: #2B170C;
-    margin-top: 20px;
-    margin-bottom: 05px; /* ← espaço abaixo */
-    text-align: center;
+ <p class="frase-destaque">
+  <strong>"Bolos artesanais" <span class="quebra-desk"> 
+    Ingredientes Especiais para momentos especiais 💖🍓🍫"</span>
+  </strong>
+</p>
+  <main>
+     <section class="parallax">
+         <div class="parallax-conteudo">
+         <h2>Bolos Confeccionados</h2>
+        <p>Confeccionados com ingredientes selecionados peça já o seu😋!!!</p>
+         </div>
+     </section>
 
-}
+  
+     <h1>Karols Doces</h1>
 
-.frase-destaque strong {
-    font-size: inherit;
-}
-
-    p {
-        font-family: 'Poppins';  
-        font-size: 1.4rem;
-        
-
-    }
-
-    h3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.8rem;
-    color: #2B170C;
-    margin-top: -15px;
-    margin-bottom: 50px; /* ← espaço abaixo */
-    }
-
-    .titulo-bolo{
-    font-family: 'Pacifico', cursive;
-    font-size: 1.4rem;
-    color: #2B170C;
-    margin-top: 30px;
-    margin-bottom: 05px; /* ← espaço abaixo */
-    }
-
-    .btn-pedido {
-    display: inline-block;
-    background-color: #2B170C;
-    color: #FCF9F5;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-pedido:hover {
-    background-color: #E8A598;
-    color: #2B170C;
-    transform: scale(1.05);
-}
-
-/* MOBILE FIRST */
-.pedido-linha {
-    display: block;
-    text-align: right;
-    font-size: 1.5rem;
-}
-
-header {
-    background-color: #2B170C; /* marrom escuro */
-    padding: 15px 20px;
-    position: relative;
- font-family: 'Poppins', sans-serif;
-}
-
-    .navbar {
-        display: flex;
-        justify-content: space-between; /* logo na esquerda, botão na direita */
-        align-items: center;
-        
-    }
-
-    .logo {
-        color: white;
-        font-size: 1.7rem;
-        font-weight: bold;
-        font-family: 'Pacifico', cursive;
-    }
-
-    /* ========================
-    BOTÃO HAMBURGUER — MOBILE
-    ======================== */
-    .hamburguer {
-        display: flex;          /* visível no mobile */
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 5px;
-        margin-left: auto;
-    }
-
-    .hamburguer span {
-        display: block;
-        width: 28px;
-        height: 3px;
-        background-color: white;
-        border-radius: 3px;
-        transition: all 0.3s ease;
-    }
-
-    /* ========================
-    MENU — MOBILE (fechado por padrão)
-    ======================== */
-    .menu {
-        display: none;
-        position: absolute;
-        top: 58px;
-        right: 0;          /* ← TROCA left: 0 por right: 0 */
-        width: 200px;      /* ← TROCA width: 100% por um tamanho fixo */
-        z-index: 100;
-        border-radius: 0 0 0 8px; /* Arredonda levemente o canto inferior esquerdo para suavizar */
-        overflow: hidden;
-    }
-
-    .menu.aberto {
-        display: block;
-        /* Mistura do marrom com transparência (rgba) e efeito de vidro fosco (blur) */
-        background-color: rgba(43, 23, 12, 0.85); 
-        backdrop-filter: blur(8px); 
-        -webkit-backdrop-filter: blur(8px); /* Suporte para navegadores Safari */
-        box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
-    }
-    .menu ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column; /* itens empilhados no mobile */
-    }
-
-.menu ul li a {
-    display: block;
-    padding: 14px 20px;
-    color: #FCF9F5; /* Texto cor creme para melhor harmonia */
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid rgba(252, 249, 245, 0.08); /* Linha divisória sutil entre os links */
-}
-
-
-
-    .menu ul li a:hover {
-        background-color: rgba(252, 249, 245, 0.15); /* Destaque sutil ao passar o mouse */
-        color: #E8A598; /* Tom rosa queimado/morango sutil para o link ativo/hover */
-        padding-left: 25px; /* Leve recuo para a direita criando um efeito dinâmico elegante */
-    }
-    /* ========================
-    ANIMAÇÃO DO X ao abrir
-    ======================== */
-    .hamburguer.ativo span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburguer.ativo span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburguer.ativo span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* ========================
-    MEDIA QUERY — PC / NOTEBOOK
-    min-width: 1024px
-    ======================== */
-
-    .parallax {
-       background-image: url('img/768px.png'); /* ← coloque o nome da sua imagem */
-           background-attachment: fixed;            /* ← ESTE é o efeito parallax */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 400px;                           /* altura da seção */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .parallax-conteudo {
-        text-align: center;
-        color: white;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* sombra para legibilidade */
-    }
-
-    .parallax-conteudo h2 {
-        font-size: 1.6rem;
-        margin-bottom: 10px;
-    }
-
-    .parallax-conteudo p {
-        font-size: 1.4rem;
-    }
-
-.parallax2 {
- background-image: url('img/morning\,coffe.png'); /* ← coloque o nome da sua imagem */
- background-attachment: fixed;            /* ← ESTE é o efeito parallax */
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- height: 400px;                           /* altura da seção */
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-    .parallax2-conteudo {
-        text-align: center;
-        color: white;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* sombra para legibilidade */
-    }
-
-    .parallax2-conteudo h2 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-    }
-
-    .parallax2-conteudo p {
-        font-size: 1.8rem;
-    }
-
-    .quebra-desk {
-        display: none;
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(43, 23, 12, 0.85); 
-    backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2);
-    padding-top: 12px;    /* ← desencosta do topo */
-    padding-bottom: 12px; /* ← respiro embaixo também */
-    font-size: 1.2rem;
-    color: #dbdbdb; /* ← cor creme, mesma dos links do menu */
+     <h3><strong>🎂 Bolo artesanal de chocolate com recheio cremoso de     prestígio😋 <br> <span class="frase-cortar"> cobertura super macia e cremosa,  decorado com morangos   fresquinhos!!! <br> Feito com ingredientes selecionados para proporcionar uma experiência única, irresistível e inesquecível!😍</span></strong>
+     </h3>
  
-}
+ 
 
-.icones img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    transition: box-shadow 0.3s ease;
-}
+      <section class="parallax2">
+         <div class="parallax-conteudo">
+         <h2>Para Cafézinho Manhã/Tarde</h2>
+         <p>Feitos Muito Capricho!!!</p>
+         </div>
+     </section>
 
-.icones img:hover {
-    box-shadow: 0 0 12px rgba(232, 165, 152, 0.8); /* ← brilho rosê ao redor */
-}
+        <h3 class="titulo-bolo">
+            <span class="quebra-desk">Perfeitos para acompanhar ocasiões especiais e tornar seus momentos inesquecíveis!!! <br>
+            Bolos Artesanais para deixar seu Café da manhã/tarde com sabor especial!!! <br>
+            
+            Bolos e doces artesanais preparados com ingredientes selecionados!!!<br></span>
+            <span class="pedido-linha">
+                Encomende já o Seu!!! <br> 👉
+                <a href="https://wa.me/5512996579815?text=Olá%2C%20gostaria%20de%20fazer%20um%20pedido!"
+                target="_blank"
+                class="btn-pedido">
+                🛒 Fazer Pedido
+                </a>
+            </span>
+      </h3>
+</main>
+ <footer>
+     <div class="footer-container">
+          <div class="icones">
+             <a href="https://github.com/ronidev0501" target="_blank" rel="noopener noreferrer">
+                 <img src="img/git.hub.PNG" alt="Ícone do GitHub">
+             </a>
+                            
+             <a href="https://www.linkedin.com/in/jrads" target="_blank">
+                     <img src="img/lk.novo.png" alt="Ícone LinkedIn">
+                 </a>
 
-.icones a {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    display: inline-block;
-}
+                 <a href="https://wa.me/5512996579815?text=Ol%C3%A1%2C%20analista%20de%20sitemas%20jr%2F%20front%20end%20jr%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20portf%C3%B3lio.." target="_blank">
+                            <img src="img/what.novo.png" alt="Ícone Whatsapp">
+                 </a>      
+         </div> 
+<br>
+            <p class="copyright">
+              &copy; 2026 ronidev0501
+            </p>
+      </div>
+  </footer>
+  
 
-.icones a:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
+  <script>                                          <!-- ← ADICIONE ESTE BLOCO -->
+    const btn = document.getElementById('btnHamburguer');
+    const menu = document.getElementById('menu');
 
-.icones {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    justify-content: center; /* ← centraliza no mobile */
-}
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('ativo');
+      menu.classList.toggle('aberto');
+    });
+  </script>
 
-.parallax, .parallax2 {
-    margin-left: -20px;
-    margin-right: -20px;
-}
-
-@media (min-width: 1024px) {
-
-    .parallax {
-        background-image: url('img/1024px.png'); /* ← imagem para 1280px+ */
-    }
-
-        .quebra-desk {
-            display: block;
-        }
-
-        .frase-cortar {
-        display: inline; /* ← visível no mobile */
-        }
-
-        .hamburguer {
-            display: none;      /* esconde o botão hamburguer */
-        }
-
-        .menu {
-            display: block;     /* menu sempre visível */
-            position: static;   /* volta ao fluxo normal */
-            width: auto;
-            background: none;
-            padding: 0;
-        }
-
-        .menu ul {
-            flex-direction: row; /* itens lado a lado */
-            gap: 10px;
-        }
-
-        .menu ul li a {
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-
-        .parallax {
-            height: 500px;
-        }
-
-        .parallax-conteudo h2 {
-            font-size: 3rem;
-        }
-
-        .frase-destaque {
-            max-width: 700px;    /* largura máxima */
-            margin: 20px auto;   /* centraliza */
-            font-size: 2.5rem;
-            text-align: left;
-            padding: 0 20px;
-        }
-
-        h3 {
-        font-family: 'Pacifico', cursive;
-        font-size: 1.6rem;
-        }
-
-        .titulo-bolo {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-         }
-
-       .btn-pedido {
-        margin-top: 0;
-        flex-shrink: 0;
-        }
-    }
-
-    /* ========================
-    MEDIA QUERY — TV
-    min-width: 1280px
-    ======================== */
-    @media (min-width: 1280px) {
-
-         .parallax {
-        background-image: url('img/1024px.png'); /* ← imagem para 1280px+ */
-    }
-
-        .quebra-desk {
-            display: block;
-            text-align: left;
-        }
-
-        header {
-            padding: 20px 60px;  /* mais espaçamento lateral */
-        }
-
-        .logo {
-            font-size: 1.8rem;
-        }
-
-        .frase-cortar {
-        display: inline; /* ← visível no mobile */
-    }
-
-        .menu ul {
-            gap: 20px;
-        }
-
-        .menu ul li a {
-            font-size: 1.1rem;
-            padding: 10px 20px;
-        }
-        .parallax {
-            height: 600px;
-        }
-
-        .parallax-conteudo h2 {
-            font-size: 3.8rem;
-        }
-
-        .frase-destaque {
-            max-width: 900px;    /* mais largo na TV */
-            font-size: 1.8rem;
-            margin: 30px auto;
-            text-align: center;
-        }
-
-        h3 {
-        font-family: 'Pacifico', cursive;
-        font-size: 1.5rem;
-        }
-
-        titulo-bolo {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .btn-pedido {
-        font-size: 1.1rem;
-        padding: 14px 32px;
-     }
-    }
-
+</body>
+</html>
