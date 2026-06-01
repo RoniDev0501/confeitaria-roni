@@ -322,7 +322,7 @@ header {
 @media (min-width: 1024px) {
 
     .parallax {
-        background-image: url('img/1024px.png'); /* ← imagem para 1280px+ */
+        background-image: url('img/img1.jfif'); /* ← imagem para 1280px+ */
     }
 
         .quebra-desk {
@@ -355,37 +355,45 @@ header {
             border-radius: 5px;
         }
 
-        .parallax {
-            height: 500px;
-        }
+    .parallax {
+        height: 500px;
+    }
 
-        .parallax-conteudo h2 {
-            font-size: 3rem;
-        }
+    .parallax-conteudo h2 {
+        font-size: 3rem;
+    }
 
-        .frase-destaque {
-            max-width: 700px;    /* largura máxima */
-            margin: 20px auto;   /* centraliza */
-            font-size: 2.5rem;
-            text-align: left;
-            padding: 0 20px;
-        }
+    .frase-destaque {
+        max-width: 700px;    /* largura máxima */
+        margin: 20px auto;   /* centraliza */
+        font-size: 2.5rem;
+        text-align: left;
+        padding: 0 20px;
+    }
 
-        h3 {
-        font-family: 'Pacifico', cursive;
-        font-size: 1.6rem;
-        }
+    h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
+     padding-left: 60px; 
+    }
 
-        .titulo-bolo {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-         }
+    .titulo-bolo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
 
-       .btn-pedido {
-        margin-top: 0;
-        flex-shrink: 0;
-        }
+    .btn-pedido {
+    margin-top: 0;
+    flex-shrink: 0;
+    }
+
+ .parallax::before {
+        background-image: url('img/img1.jfif');
+        background-size: cover;           /* ← volta ao original */
+        background-position: center;      /* ← sem ajuste de posição */
+        background-color: transparent;    /* ← remove a cor de fundo */
+       }
     }
 
     /* ========================
@@ -395,7 +403,7 @@ header {
     @media (min-width: 1280px) {
 
          .parallax {
-        background-image: url('img/1024px.png'); /* ← imagem para 1280px+ */
+        background-image: url('img/img1.jfif'); /* ← imagem para 1280px+ */
     }
 
         .quebra-desk {
@@ -441,6 +449,7 @@ header {
         h3 {
         font-family: 'Pacifico', cursive;
         font-size: 1.5rem;
+        padding-left: 80px;
         }
 
         titulo-bolo {
@@ -453,5 +462,12 @@ header {
         font-size: 1.1rem;
         padding: 14px 32px;
      }
+
+       .parallax::before {
+        background-image: url('img/img1.jfif');
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+        }
     }
 
