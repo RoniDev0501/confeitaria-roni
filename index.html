@@ -9,6 +9,11 @@
     <link href="[https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap](https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap)" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+<button id="btnTopo" title="Voltar ao topo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2L5 10h4v10h6V10h4L12 2z"/>
+  </svg>
+</button>
 <body>
   <header>
      <div class="navbar">
@@ -70,7 +75,7 @@
             
             Bolos e doces artesanais preparados com ingredientes selecionados!!!<br></span>
             <span class="pedido-linha">
-                Encomende já o Seu!!! <br> 👉
+                Encomende já o Seu!!! <br> 
                 <a href="https://wa.me/5512996579815?text=Olá%2C%20gostaria%20de%20fazer%20um%20pedido!"
                 target="_blank"
                 class="btn-pedido">
@@ -125,6 +130,23 @@
     const rect2 = parallax2El.getBoundingClientRect();
     parallax2El.style.setProperty('--parallax2-move', `${-rect2.top * speed}px`);
   });
+
+  /* botão voltar ao topo */
+const btnTopo = document.getElementById('btnTopo');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    btnTopo.style.opacity = '1';
+    btnTopo.style.pointerEvents = 'auto';
+  } else {
+    btnTopo.style.opacity = '0';
+    btnTopo.style.pointerEvents = 'none';
+  }
+});
+
+btnTopo.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 
 </body>
