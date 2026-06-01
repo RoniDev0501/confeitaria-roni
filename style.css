@@ -313,6 +313,61 @@ header {
   margin-right: -20px;
 }
 
+#btnTopo {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  z-index: 999;
+  background-color: #2B170C;
+  color: #FCF9F5;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0;                        /* ← invisível por padrão */
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+#btnTopo {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  z-index: 999;
+  background-color: #FCF9F5;      /* ← fundo claro como na imagem */
+  border: none;
+  border-radius: 16px;            /* ← quadrado arredondado */
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);  /* ← sombra suave */
+}
+
+#btnTopo svg {
+  width: 30px;
+  height: 30px;
+  color: #2B170C;                 /* ← seta escura */
+  transition: color 0.3s ease;
+}
+
+#btnTopo:hover {
+  background-color: #2B170C;
+  transform: translateY(-4px);    /* ← sobe levemente no hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+#btnTopo:hover svg {
+  color: #FCF9F5;                 /* ← inverte no hover */
+}
+
+
+
 @media (max-width: 768px) {
   .parallax {
     height: 400px;  /* ← igual ao parallax2 */
@@ -325,35 +380,35 @@ header {
         background-image: url('img/img1.jfif'); /* ← imagem para 1280px+ */
     }
 
-        .quebra-desk {
+    .quebra-desk {
             display: block;
-        }
+    }
 
-        .frase-cortar {
+    .frase-cortar {
         display: inline; /* ← visível no mobile */
-        }
+    }
 
-        .hamburguer {
-            display: none;      /* esconde o botão hamburguer */
-        }
+    .hamburguer {
+        display: none;      /* esconde o botão hamburguer */
+    }
 
-        .menu {
-            display: block;     /* menu sempre visível */
-            position: static;   /* volta ao fluxo normal */
-            width: auto;
-            background: none;
-            padding: 0;
-        }
+    .menu {
+        display: block;     /* menu sempre visível */
+        position: static;   /* volta ao fluxo normal */
+        width: auto;
+        background: none;
+        padding: 0;
+    }
 
-        .menu ul {
-            flex-direction: row; /* itens lado a lado */
-            gap: 10px;
-        }
+    .menu ul {
+        flex-direction: row; /* itens lado a lado */
+        gap: 10px;
+    }
 
-        .menu ul li a {
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
+    .menu ul li a {
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
 
     .parallax {
         height: 500px;
@@ -378,14 +433,14 @@ header {
     }
 
     .titulo-bolo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
     }
 
     .btn-pedido {
-    margin-top: 0;
-    flex-shrink: 0;
+     margin-top: 0;
+     flex-shrink: 0;
     }
 
  .parallax::before {
@@ -393,81 +448,112 @@ header {
         background-size: cover;           /* ← volta ao original */
         background-position: center;      /* ← sem ajuste de posição */
         background-color: transparent;    /* ← remove a cor de fundo */
-       }
     }
 
-    /* ========================
-    MEDIA QUERY — TV
-    min-width: 1280px
-    ======================== */
-    @media (min-width: 1280px) {
+    .footer-container {
+        flex-direction: row;          /* ← coloca em linha */
+        justify-content: flex-start;  /* ← alinha à esquerda */
+        gap: 30px;
+        padding: 16px 40px;
+        font-size: 1.4rem;
+        
+    }
 
-         .parallax {
+ .footer-container p {
+     font-size: 1.8rem;  /* ← força o tamanho na TV */
+   }
+
+   footer-container .icones {
+    padding-left: 40px;  /* ← espaço da borda esquerda */
+  }
+}
+
+@media (min-width: 1280px) {
+
+    .parallax {
         background-image: url('img/img1.jfif'); /* ← imagem para 1280px+ */
     }
 
-        .quebra-desk {
-            display: block;
-            text-align: left;
-        }
+    .quebra-desk {
+        display: block;
+        text-align: left;
+    }
 
-        header {
-            padding: 20px 60px;  /* mais espaçamento lateral */
-        }
+    header {
+        padding: 20px 60px;  /* mais espaçamento lateral */
+    }
 
-        .logo {
-            font-size: 1.8rem;
-        }
+    .logo {
+        font-size: 1.8rem;
+    }
 
-        .frase-cortar {
+    .frase-cortar {
         display: inline; /* ← visível no mobile */
     }
 
-        .menu ul {
-            gap: 20px;
-        }
+    .menu ul {
+        gap: 20px;
+    }
 
-        .menu ul li a {
-            font-size: 1.1rem;
-            padding: 10px 20px;
-        }
-        .parallax {
-            height: 600px;
-        }
+    .menu ul li a {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    .parallax {
+        height: 600px;
+    }
 
-        .parallax-conteudo h2 {
-            font-size: 3.8rem;
-        }
+    .parallax-conteudo h2 {
+        font-size: 3.8rem;
+    }
 
-        .frase-destaque {
-            max-width: 900px;    /* mais largo na TV */
-            font-size: 1.8rem;
-            margin: 30px auto;
-            text-align: center;
-        }
+    .frase-destaque {
+        max-width: 900px;    /* mais largo na TV */
+        font-size: 1.8rem;
+        margin: 30px auto;
+        text-align: center;
+    }
 
-        h3 {
-        font-family: 'Pacifico', cursive;
-        font-size: 1.5rem;
-        padding-left: 80px;
-        }
+    h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    padding-left: 80px;
+    }
 
-        titulo-bolo {
+    titulo-bolo {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     .btn-pedido {
-        font-size: 1.1rem;
-        padding: 14px 32px;
-     }
-
-       .parallax::before {
-        background-image: url('img/img1.jfif');
-        background-size: cover;
-        background-position: center;
-        background-color: transparent;
-        }
+    font-size: 1.1rem;
+    padding: 14px 32px;
     }
+
+    .parallax::before {
+    background-image: url('img/img1.jfif');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    }
+
+    .footer-container {
+        flex-direction: row;          /* ← coloca em linha */
+        justify-content: flex-start;  /* ← alinha à esquerda */
+        gap: 30px;
+        padding: 16px 40px;
+        font-size: 1.8rem;
+    }
+
+    .footer-container p {
+    font-size: 1.8rem;  /* ← força o tamanho no parágrafo */
+  }
+
+  .footer-container .icones {
+    padding-left: 60px;  /* ← um pouco mais na TV */
+       margin-right: 30px;  /* ← espaço entre ícones e texto */
+  }
+}
+
 
