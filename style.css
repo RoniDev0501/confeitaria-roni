@@ -12,7 +12,7 @@ body {
 
  main {
     padding: 20px;
-        overflow-x: visible; 
+    overflow-x: hidden; /* ← era visible, troque para hidden */
 }
 
 h1 {
@@ -49,16 +49,20 @@ h3 {
     font-family: 'Pacifico', cursive;
     font-size: 1.8rem;
     color: #2B170C;
-    margin-top: -15px;
+    margin-top: -65px;
     margin-bottom: 50px; /* ← espaço abaixo */
 }
 
 .titulo-bolo{
     font-family: 'Pacifico', cursive;
-    font-size: 1.4rem;
     color: #2B170C;
-    margin-top: 30px;
-    margin-bottom: 05px; /* ← espaço abaixo */
+    margin-top: 05px;
+    margin-bottom: 05px;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .btn-pedido {
@@ -86,6 +90,7 @@ h3 {
     display: block;
     text-align: right;
     font-size: 1.5rem;
+    padding-top: 30px;
 }
 
 header {
@@ -118,6 +123,7 @@ header {
     cursor: pointer;
     padding: 5px;
     margin-left: auto;
+    margin-right: 25px;
 }
 
 .hamburguer span {
@@ -185,7 +191,7 @@ header {
 
 .parallax {
   position: relative;
-  height: 400px;  /* ← era 300px, parallax2 tem 400px */
+  height: 500px;  /* ← era 300px, parallax2 tem 400px */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -196,12 +202,12 @@ header {
 .parallax::before {
   content: '';
   position: absolute;
-  inset: -30%;
+  inset: -3%;
   background-image: url('img/768px.png');
-  background-size: 70%;
-  background-position: center 40%;
+  background-size: 395px;
+  background-position: center center ;
   background-repeat: no-repeat;
-  background-color: #1a0d00;  /* ← cor escura igual à borda da foto */
+  background-color: transparent;
   will-change: transform;
   z-index: 0;
   transform: translateY(var(--parallax-move, 0px));
@@ -235,15 +241,27 @@ header {
 }
 
 .parallax2 {
- background-image: url('img/morning\,coffe.png'); /* ← coloque o nome da sua imagem */
- background-attachment: fixed;            /* ← ESTE é o efeito parallax */
- background-position: center;
+ background-attachment: unset;            /* ← ESTE é o efeito parallax */
+ background-position: center center; /* ← ajuste o % para enquadrar melhor */
  background-repeat: no-repeat;
- background-size: cover;
- height: 400px;                           /* altura da seção */
+ background-size: 100%;  
  display: flex;
+ width: calc(100% + 40px); /* ← compensa os dois lados */
  align-items: center;
  justify-content: center;
+ margin-left: -20px;                  /* ← remove os margins negativos no mobile */
+    margin-right: -20px;
+}
+
+.parallax2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('img/morning\,coffe.png');
+  background-size: cover;
+  background-position: center;
+  transform: translateY(var(--parallax2-move, 0px));
+  z-index: 0;
 }
 
 .parallax2-conteudo {
@@ -272,10 +290,11 @@ header {
     text-align: center;
     background-color: #2B170C;
     box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.2);
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top:25px;
+    padding-bottom: 25px;
     font-size: 1.2rem;
     color: #dbdbdb;
+    gap: -35px;
 }
 
 .icones img {
@@ -303,14 +322,24 @@ header {
 
 .icones {
     display: flex;
-    gap: 28px;
+    gap: 38px;
     align-items: center;
     justify-content: center; /* ← centraliza no mobile */
 }
 
 .parallax2 {
-  margin-left: -20px;
-  margin-right: -20px;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  width: 100vw;        /* ← largura total da viewport */
+  margin-left: calc(-1 * ((100vw - 100%) / 2)); /* ← centraliza */
+  margin-right: 0;
+
+}
+
+.parallax2 .parallax-conteudo {
+  position: relative;
+  z-index: 1; /* ← texto fica acima da imagem que se move */
 }
 
 #btnTopo {
@@ -332,7 +361,7 @@ header {
 
 #btnTopo {
   position: fixed;
-  bottom: 30px;
+  bottom: 437px;
   right: 25px;
   z-index: 999;
   background-color: #FCF9F5;      /* ← fundo claro como na imagem */
@@ -366,7 +395,14 @@ header {
   color: #FCF9F5;                 /* ← inverte no hover */
 }
 
+@keyframes pulo {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); } /* ← altura do pulo */
+}
 
+#btnTopo {
+  animation: pulo 1.5s ease-in-out infinite; /* ← velocidade do pulo */
+}
 
 @media (max-width: 768px) {
   .parallax {
@@ -520,16 +556,19 @@ header {
     padding-left: 80px;
     }
 
-    titulo-bolo {
+    .titulo-bolo {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 20px;
     }
 
-    .btn-pedido {
-    font-size: 1.1rem;
-    padding: 14px 32px;
-    }
+     #btnTopo {
+    bottom: 240px; /* ← só este, ajuste o valor até ficar na posição certa */
+    top: unset;    /* ← cancela qualquer top herdado */
+    right: 60px;
+    position: fixed;
+  }
 
     .parallax::before {
     background-image: url('img/img1.jfif');
@@ -551,9 +590,32 @@ header {
   }
 
   .footer-container .icones {
-    padding-left: 60px;  /* ← um pouco mais na TV */
-       margin-right: 30px;  /* ← espaço entre ícones e texto */
+    padding-left: 130px;  /* ← um pouco mais na TV */
+    margin-right: 80px;  /* ← espaço entre ícones e texto */
+
+  }
+
+  .pedido-linha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 30px; /* ← aumenta o espaço entre o texto e o botão */
+  }
+
+  .btn-pedido {
+    margin-top: 0; /* ← o gap já cuida do espaço */
+    font-size: 1.1rem;
+    padding: 14px 32px;
+  }
+
+   .navbar {
+    border-bottom: none; /* ← remove do navbar se tiver */
+    box-shadow: none;
+  }
+
+  nav.menu {
+    border-bottom: 2px solid #E8A598; /* ← só no nav */
+    padding-bottom: 6px;
   }
 }
-
 
